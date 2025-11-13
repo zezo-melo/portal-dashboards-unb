@@ -1,0 +1,170 @@
+/* src/components/DashboardIframe.css */
+
+/* --- Layout da Página (Geral) --- */
+
+/* Container da página (necessário para envolver tudo) */
+.dashboard-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o footer fique no final */
+}
+
+/* --- Banner de Título (Estilo HeroBanner - Sólido) --- */
+.iframe-title-banner {
+    position: relative;
+    width: 100%;
+    /* Altura reduzida para servir como um 'Header' estilizado */
+    height: 140px; 
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* ATUALIZADO: Cor de fundo sólida (Azul #4A90E2, cor do footer) */
+    background-color: #4A90E2; 
+    /* Adiciona uma sombra sutil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+}
+
+/* REMOVIDO: Estilos de VÍDEO E OVERLAY */
+
+
+/* Conteúdo do Título (para alinhamento) */
+.iframe-title-content {
+    /* Define a largura máxima, mas garante que o padding interno seja respeitado */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    /* Mantenha o padding interno para o texto não encostar nas bordas da tela */
+    padding: 0 40px; 
+    position: relative;
+    z-index: 1; /* Acima do fundo */
+    /* Alinha o conteúdo à esquerda */
+    text-align: left; 
+}
+
+/* TÍTULO (h1) */
+.iframe-title {
+    font-size: 2.0rem; 
+    font-weight: 700 !important;
+    color: white !important; /* Cor branca para contraste */
+    margin: 0; /* Remove margens extras */
+    line-height: 1.2;
+}
+
+
+/* --- Container do Iframe (Preenche o Espaço) --- */
+.iframe-container {
+    flex-grow: 1; /* Faz o conteúdo do iframe ocupar o espaço restante */
+    /* CRÍTICO: Removendo o padding para que o conteúdo ocupe 100% da largura/altura */
+    padding: 0; 
+    /* Removendo a cor de fundo cinza, pois queremos o iframe "flutuando" ou o fundo da página.
+       Deixo em branco ou transparente, mas vou manter o `#f0f2f5` como fallback se for necessário.
+    */
+    background-color: #f0f2f5; 
+}
+
+.iframe-wrapper {
+    /* CRÍTICO: Altura calculada para preencher EXATAMENTE o espaço. 
+       Assumindo que o footer tem ~50px, banner 140px, e o iframe-container é o resto.
+       Vou calcular a altura do banner e assumir que o footer é o default, ou seja, 
+       usarei `calc(100vh - (Altura Banner + Altura Footer))`
+       Vou usar 200px como um valor seguro para a altura combinada do banner (140px) e footer.
+    */
+    height: calc(100vh - 200px); 
+    /* CRÍTICO: Ocupa 100% da largura do container (que já é 100%) */
+    width: 100%; 
+    /* CRÍTICO: Removendo margem externa de centralização */
+    margin: 0; 
+    
+    overflow: hidden; 
+    /* Manter bordas e sombra? Se não quiser, remova as linhas abaixo: */
+    border-radius: 0; /* Removendo o arredondamento para ocupar 100% */
+    box-shadow: none; /* Removendo sombra para um visual "flat" */
+    background-color: white;
+}
+
+.dashboard-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Responsividade --- */
+
+@media (max-width: 968px) {
+    .iframe-title-banner {
+        height: 130px;
+    }
+
+    .iframe-title-content {
+        padding: 0 30px;
+    }
+
+    .iframe-title {
+        font-size: 1.8rem;
+    }
+
+    .iframe-wrapper {
+        height: calc(100vh - 210px);
+    }
+}
+
+@media (max-width: 768px) {
+    .iframe-title-banner {
+        height: 110px;
+    }
+
+    .iframe-title-content {
+        padding: 0 20px;
+    }
+
+    .iframe-title {
+        font-size: 1.5rem;
+    }
+    
+    .iframe-container {
+        padding: 0;
+    }
+    
+    .iframe-wrapper {
+        /* Ajuste a altura para mobile */
+        height: calc(100vh - 180px); 
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .iframe-title-banner {
+        height: 100px;
+    }
+
+    .iframe-title-content {
+        padding: 0 15px;
+    }
+
+    .iframe-title {
+        font-size: 1.3rem;
+    }
+
+    .iframe-wrapper {
+        height: calc(100vh - 160px);
+    }
+}
+
+@media (max-width: 480px) {
+    .iframe-title-banner {
+        height: 90px;
+    }
+
+    .iframe-title-content {
+        padding: 0 12px;
+    }
+
+    .iframe-title {
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+
+    .iframe-wrapper {
+        height: calc(100vh - 150px);
+    }
+}

@@ -10,7 +10,7 @@ const DashTuberculose = () => {
   return (
     <DashboardIframe 
       dashboardUrl={urlNovoDashboard} 
-      title="Dashboard: Novo Estudo" 
+      title="Dashboard: Tuberculose" 
     />
   );
 };

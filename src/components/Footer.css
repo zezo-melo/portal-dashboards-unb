@@ -1,0 +1,148 @@
+/* src/components/Footer.css */
+
+.footer-container {
+    background-color: #4A90E2; /* Cor de fundo azul principal (usada no carrossel) */
+    padding: 30px 0px;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Seção de Informações (Logo + Direitos) */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Container do link da logo */
+.footer-logo-link {
+    display: inline-block; /* Para garantir que o link se comporte corretamente */
+    line-height: 1; /* Alinhamento vertical correto */
+}
+
+/* Estilização da Imagem da Logo */
+.footer-logo-img {
+    height: 65px; /* Altura que simula o tamanho da fonte de 2rem */
+    width: auto;
+    /* Para remover qualquer background estranho que possa vir da imagem, 
+       você pode aplicar um filtro, se a imagem original for escura e o fundo for claro */
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8); /* Branco mais suave */
+    margin: 0;
+}
+
+/* Seção de Links Sociais */
+.footer-social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social-links a {
+    color: white; /* Cor dos ícones */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social-links a:hover {
+    color: #FF8C00; /* Laranja de destaque no hover */
+    transform: scale(1.1);
+}
+
+.footer-social-links svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsividade */
+@media (max-width: 968px) {
+    .footer-content {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 25px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .footer-social-links {
+        order: -1; /* Move os ícones sociais para cima no mobile */
+        margin-bottom: 10px;
+    }
+
+    .footer-info {
+        align-items: center;
+    }
+
+    .footer-logo-img {
+        height: 50px;
+    }
+
+    .footer-copyright {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        padding: 20px 0;
+    }
+
+    .footer-content {
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .footer-logo-img {
+        height: 40px;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+
+    .footer-social-links {
+        gap: 15px;
+    }
+
+    .footer-social-links svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 15px 0;
+    }
+
+    .footer-content {
+        padding: 0 10px;
+    }
+
+    .footer-logo-img {
+        height: 35px;
+    }
+
+    .footer-copyright {
+        font-size: 0.75rem;
+    }
+}

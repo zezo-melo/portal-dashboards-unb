@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // Importando a imagem como módulo (necessário no Vite para assets em src/)
 import bgElements from '../../assets/bg-elements.png';
 
 const SlideHansen = ({ title, description }) => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     
     // Conteúdo fixo da imagem (para garantir a fidelidade do texto, como no slide Hansen)
     const fixedTitle = "HANSENÍASE: ANÁLISE EPIDEMIOLÓGICA E DE COMPORTAMENTO";
@@ -26,42 +36,45 @@ const SlideHansen = ({ title, description }) => {
             color: '#3891C0' 
         },
         title: {
-            fontSize: '2.5rem', 
+            fontSize: windowWidth <= 768 ? (windowWidth <= 480 ? '1.5rem' : '2rem') : '2.5rem', 
             marginBottom: '1rem', 
             lineHeight: '1.2',
             // Usando a cor de destaque consistente para o título
             color: '#3891C0' 
         },
         description: {
-            fontSize: '1.1rem', 
-            marginBottom: '2rem'
+            fontSize: windowWidth <= 768 ? (windowWidth <= 480 ? '0.9rem' : '1rem') : '1.1rem', 
+            marginBottom: '2rem',
+            lineHeight: '1.5'
         },
         // Estilos para o botão (mantendo a cor #3891C0)
         button: {
             backgroundColor: '#3891C0', 
             color: 'white', 
-            padding: '12px 24px',
+            padding: windowWidth <= 480 ? '10px 20px' : '12px 24px',
             border: 'none',
             borderRadius: '4px',
-            fontSize: '1rem',
+            fontSize: windowWidth <= 480 ? '0.9rem' : '1rem',
             fontWeight: '600',
             cursor: 'pointer',
             transition: 'background-color 0.3s'
         }
     };
 
+    const slideContentStyle = {
+        backgroundImage: `linear-gradient(${overlayColor}, ${overlayColor}), url(${imageUrl})`,
+        justifyContent: 'flex-start',
+        paddingLeft: windowWidth <= 768 ? (windowWidth <= 480 ? '5%' : '8%') : '10%',
+        paddingRight: windowWidth <= 480 ? '5%' : '10%',
+        paddingTop: windowWidth <= 480 ? '30px' : '40px',
+        paddingBottom: windowWidth <= 480 ? '30px' : '40px',
+    };
+
     return (
         <Link to={linkUrl} className="slide-link">
             <div 
                 className="slide-content" 
-                // Estilo para a imagem de fundo e sobreposição
-                style={{ 
-                    // Usa a variável de URL definida localmente
-                    backgroundImage: `linear-gradient(${overlayColor}, ${overlayColor}), url(${imageUrl})`,
-                    // Layout Customizado (Alinhar à esquerda)
-                    justifyContent: 'flex-start',
-                    paddingLeft: '10%',
-                }}
+                style={slideContentStyle}
             >
                 {/* Aplica o estilo customizado à div de texto */}
                 <div className="slide-text" style={customStyles.slideText}>

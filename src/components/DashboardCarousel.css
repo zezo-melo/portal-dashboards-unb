@@ -1,0 +1,132 @@
+/* src/components/DashboardCarousel.css */
+
+.carousel-container-full {
+    /* Define o tamanho do container se necessário, garantindo que as setas fiquem bem posicionadas */
+    width: 100%;
+    max-width: 1400px; /* Exemplo de largura máxima */
+    margin: 40px auto;
+    margin-bottom: 60px;
+    position: relative; /* Essencial para que as setas absolutas do Swiper se posicionem corretamente */
+    border-radius: 40px;
+}
+
+/* Estilo do Swiper */
+.mySwiper {
+    width: 100%;
+    height: auto; /* Ajuste a altura conforme a necessidade do conteúdo do slide */
+    padding-bottom: 50px; /* Dá espaço para a paginação */
+}
+
+/* Estilização dos Bullets de Paginação */
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5); /* Bullet claro e semi-transparente */
+    opacity: 1;
+    transition: background 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    background: #4A90E2; /* Cor de destaque para o bullet ativo (azul) */
+    transform: scale(1.1);
+}
+
+/* Estilização das Setas de Navegação (Base Swiper Classes) */
+
+/* Altera a cor e o tamanho dos ícones (setas internas) */
+.swiper-button-prev,
+.swiper-button-next {
+    font-size: 30px !important; /* AJUSTADO: Tamanho do ícone menor que o contêiner (40px) */
+    color: white !important; /* Garante que o ícone seja branco */
+    font-weight: 900;
+}
+
+/* Estilo do contêiner circular das setas */
+.swiper-button-prev {
+    width: 30px; /* Largura do círculo */
+    height: 30px; /* Altura do círculo */
+    border-radius: 50%; /* Torna-o circular */
+    background-color: #4A90E2; /* Cor de fundo (similar ao que foi anexado) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    top: 50%; /* Centraliza verticalmente */
+    margin-top: -20px; /* Ajuste manual para centralizar verticalmente */
+    padding: 10px;
+    margin-left: 25px !important;
+}
+
+.swiper-button-next {
+    width: 30px; /* Largura do círculo */
+    height: 30px; /* Altura do círculo */
+    border-radius: 50%; /* Torna-o circular */
+    background-color: #4A90E2; /* Cor de fundo (similar ao que foi anexado) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    top: 50%; /* Centraliza verticalmente */
+    margin-top: -20px; /* Ajuste manual para centralizar verticalmente */
+    padding: 10px;
+    margin-right: 25px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #357ABD; /* Cor mais escura no hover */
+    transform: scale(1.05);
+}
+
+/* Reposicionamento das setas para ficarem na borda interna */
+.swiper-button-prev {
+    left: 10px; /* Afasta da borda esquerda */
+}
+
+.swiper-button-next {
+    right: 10px; /* Afasta da borda direita */
+}
+
+/* Responsividade */
+@media (max-width: 968px) {
+    .carousel-container-full {
+        margin: 30px auto;
+        margin-bottom: 50px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container-full {
+        margin: 25px auto;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 25px;
+        height: 25px;
+        font-size: 20px !important;
+    }
+
+    .swiper-button-prev {
+        left: 5px;
+    }
+
+    .swiper-button-next {
+        right: 5px;
+    }
+}
+
+/* Esconde as setas em telas muito pequenas se necessário */
+@media (max-width: 600px) {
+    .carousel-container-full {
+        margin: 20px 0px;
+        padding-bottom: 30px !important;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+        display: none;
+    }
+}
