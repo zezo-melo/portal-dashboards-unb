@@ -1,0 +1,79 @@
+/* ---------------------------------- */
+/* 2. HEADER (Identidade Visual Limpa e Centralizada) */
+/* ---------------------------------- */
+
+.app-header {
+    background-color: #FFFFFF; 
+    color: #343a40;
+    /* Retiramos o padding lateral para aplicar no container interno */
+    padding: 15px 0; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    
+    /* Centraliza o container interno (header-inner) na tela */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Container interno que define o limite de conteúdo e alinha logo/menu */
+.header-inner {
+    /* Limita a largura do conteúdo (ajuste o valor se necessário) */
+    max-width: 800px; 
+    width: 100%;
+    
+    /* Usa Flexbox para colocar Logo e Menu lado a lado e separá-los */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    
+    /* Adiciona o padding lateral que foi removido do .app-header */
+    padding: 0 30px; 
+}
+
+.header-logo {
+    /* A logo deve ter um tamanho definido para aparecer */
+    height: 40px; 
+    width: auto;
+    display: block;
+}
+
+.logo-link {
+    display: flex; 
+    align-items: center;
+}
+
+/* O wrapper da navegação */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.app-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    height: 30px;
+}
+
+.nav-item {
+    margin-right: 30px; 
+}
+
+.nav-link {
+    color: #343a40; 
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem; 
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #B67355; 
+}

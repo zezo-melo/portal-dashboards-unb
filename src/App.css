@@ -1,0 +1,423 @@
+/* src/App.css */
+
+/* ---------------------------------- */
+/* 1. RESET BÁSICO E FONTES */
+/* ---------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    /* Fonte sem serifa para o visual limpo */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f9; /* Fundo levemente cinza para contraste */
+}
+
+/* Container principal que empurra o conteúdo para baixo do header fixo */
+.main-content {
+    padding-top: 70px; 
+    min-height: 100vh;
+}
+
+
+
+/* ---------------------------------- */
+/* 3. HOME (Layout e Componentes Abaixo do Banner) */
+/* ---------------------------------- */
+
+/* Wrapper que envolve todo o conteúdo da Home (para permitir largura total do banner) */
+.home-content-wrapper { 
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Container do texto e cards (limita a largura para centralizar o conteúdo) */
+.home-text-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-title {
+    font-size: 2rem;
+    color: #343a40;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* ---------------------------------- */
+/* 4. CARROSSEL (Full-Width Banner) */
+/* ---------------------------------- */
+
+.carousel-container-full {
+    width: 100vw; /* LARGURA TOTAL DA VIEWPORT */
+    /* Este truque compensa o margin/padding padrão do body */
+    margin-left: calc(50% - 50vw); 
+    margin-right: calc(50% - 50vw);
+    margin-top: 0;
+    margin-bottom: 40px; 
+    
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mySwiper {
+    width: 100%;
+    height: 550px; /* Altura do seu banner */
+}
+
+.slide-link {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.slide-content {
+    /* Estilos de fundo para a imagem - será setado via inline style no JSX */
+    background-size: auto;
+    background-position: center;
+    
+    /* Alinhamento do texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.slide-text {
+    max-width: 800px;
+}
+
+.slide-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.slide-text p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.slide-button {
+    background-color: white;
+    color: #343a40;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-size: 1.1rem;
+}
+
+.slide-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Estilo da Paginação (as bolinhas) */
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: white !important;
+}
+
+/* ---------------------------------- */
+/* 5. CARDS (Mantidos, caso queira usar abaixo do banner) */
+/* ---------------------------------- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dashboard-card {
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.card-description {
+    color: #6c757d;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.card-link-text {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Estilos de cor por doença (pode ser ajustado) */
+.hansen-bg { background-color: #e6f2ff; } 
+.hansen-text { color: #007bff; }
+.tuberculose-bg { background-color: #ffe6e6; } 
+.tuberculose-text { color: #dc3545; }
+
+
+/* ---------------------------------- */
+/* 6. IFRAME (Páginas de Dashboard) */
+/* ---------------------------------- */
+
+.iframe-container {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.iframe-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.iframe-wrapper {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dashboard-iframe {
+    border: none;
+    min-height: 85vh; 
+    width: 100%;
+    display: block;
+}
+
+/* src/App.css */
+
+/* ---------------------------------- */
+/* 1. RESET BÁSICO E FONTES (Mantido do Original) */
+/* ---------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    /* Fonte sem serifa para o visual limpo */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f9; /* Fundo levemente cinza para contraste */
+    overflow-x: hidden; /* Adicionado: Evita scroll horizontal */
+}
+
+/* Container principal que empurra o conteúdo para baixo do header fixo (Mantido do Original) */
+.main-content {
+    padding-top: 70px; 
+    min-height: 100vh;
+}
+
+
+/* Outros estilos originais... */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ---------------------------------- */
+/* 3. HOME (Layout e Componentes Abaixo do Banner) (Mantido do Original) */
+/* ---------------------------------- */
+
+/* Wrapper que envolve todo o conteúdo da Home (para permitir largura total do banner) */
+.home-content-wrapper { 
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Container do texto e cards (limita a largura para centralizar o conteúdo) */
+.home-text-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-title {
+    font-size: 2rem;
+    color: #343a40;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.home-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+a.dashboard-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dashboard-card {
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.card-description {
+    color: #6c757d;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.card-link-text {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Estilos de cor por doença (pode ser ajustado) */
+.hansen-bg { background-color: #e6f2ff; } 
+.hansen-text { color: #007bff; } 
+.tuber-bg { background-color: #ffe6e6; } 
+.tuber-text { color: #dc3545; } 
+
+
+/* ---------------------------------- */
+/* 4. ESTILOS DO CARROSSEL (NOVOS ESTILOS) */
+/* ---------------------------------- */
+
+/* Container para o carrossel na página home */
+.carousel-container-full {
+    width: 100%;
+    /* Define uma altura que ocupe a tela, subtraindo o header (60px) */
+    height: calc(100vh - 60px); 
+}
+
+/* Estilo do Swiper (biblioteca de carrossel) */
+.mySwiper {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo do link que envolve o slide (para clicar em qualquer lugar) */
+.slide-link {
+    display: block;
+    height: 100%;
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Estilo do conteúdo do slide (a div principal com a imagem de fundo) */
+.slide-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Estilo para garantir que o texto do slide fique em cima da imagem */
+.slide-text {
+    z-index: 10;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para o texto ser legível */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .slide-text {
+        max-width: 90%;
+        padding: 20px;
+        text-align: center !important;
+    }
+    .slide-text h2 {
+        font-size: 1.8rem !important;
+    }
+    .slide-content {
+        padding-left: 0 !important;
+        justify-content: center !important;
+    }
+}
