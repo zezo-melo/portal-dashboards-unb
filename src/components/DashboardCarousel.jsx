@@ -10,7 +10,7 @@ import 'swiper/css/navigation'; // IMPORTANTE: Importe o CSS de navegação
 
 // Importe os componentes de slide que vamos criar
 import SlideHansen from './CarouselSlides/SlideHansen.jsx';
-import SlideTuberculose from './CarouselSlides/SlideTuberculose.jsx';
+// import SlideTuberculose from './CarouselSlides/SlideTuberculose.jsx';
 
 // Importe o CSS do carrossel para estilização, incluindo as setas
 import './DashboardCarousel.css'; 
@@ -26,13 +26,22 @@ const carouselData = [
             description: "Acesse o painel completo de dados.",
         }
     },
-    {
-        component: SlideTuberculose,
+    {
+        // O SwiperSlide renderizará este componente
+        component: SlideHansen, 
+        // Você pode passar props específicas aqui, se o Slide precisar de mais dados
         props: { 
-            title: "Tuberculose em Destaque",
-            description: "Análise de incidência e distribuição geográfica.",
+            title: "Estudo Hanseníase",     
+            description: "Acesse o painel completo de dados.",
         }
     },
+//     {
+//         component: SlideTuberculose,
+//         props: { 
+//             title: "Tuberculose em Destaque",
+//             description: "Análise de incidência e distribuição geográfica.",
+//         }
+//     },
 
 ];
 

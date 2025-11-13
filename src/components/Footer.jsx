@@ -53,10 +53,10 @@ const Footer = () => {
 
                 {/* Seção de Ícones Sociais */}
                 <div className="footer-social-links">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <a href="https://www.instagram.com/cenariossaude/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <InstagramIcon />
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/cen%C3%A1rios-em-sa%C3%BAde-62aa8a335/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <LinkedinIcon />
                     </a>
                 </div>

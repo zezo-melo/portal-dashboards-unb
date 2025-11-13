@@ -20,7 +20,7 @@ const SlideHansen = ({ title, description }) => {
     const fixedDescription = "Esta seção apresenta um dashboard interativo que permite explorar a evolução temporal, distribuição geográfica e o perfil dos casos de Hanseníase. Utilize os filtros para uma análise detalhada dos dados mais recentes e das tendências regionais.";
     
     // URL e estilos específicos deste slide
-    const linkUrl = "/Dash-Hansen";
+    const linkUrl = "/dash-hanseniase";
     // *** USANDO O MESMO ASSET DO HANSEN PARA IGUALAR O VISUAL ***
     const imageUrl = bgElements; 
     // *** USANDO A MESMA COR DE OVERLAY DO HANSEN PARA IGUALAR O VISUAL ***

@@ -67,11 +67,11 @@ function Header() {
               <Link to="/" className="nav-link" onClick={closeMenu}>Início</Link>
             </li>
             <li className="nav-item">
-              <Link to="/Dash-Hansen" className="nav-link" onClick={closeMenu}>Estudo Hansen</Link>
+              <Link to="/dash-hanseniase" className="nav-link" onClick={closeMenu}>Estudo Hanseníase</Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/Dash-Tuberculose" className="nav-link" onClick={closeMenu}>Estudo Tuberculose</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
         
