@@ -146,3 +146,23 @@ Adicione ao Carrossel (Opcional):
 Crie um componente de slide em src/components/CarouselSlides/ (ex: SlideNovo.jsx).
 
 Adicione-o ao array carouselData em src/components/DashboardCarousel.jsx.
+
+
+Ajustes que a gente fez no vite.config.js
+
+" ON PROMISE
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: "0.0.0.0",
+    port: 5173,
+    allowedHosts: ['telessaude.unb.br'], // <<< ADICIONE AQUI
+  }
+})
+
+"
